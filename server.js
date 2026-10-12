@@ -165,4 +165,8 @@ app.use((req, res, next) => {
 });
 app.use(express.static(PUBLIC, { index: false, dotfiles: 'deny' }));
 
-app.listen(PORT, () => console.log(`Running on http://localhost:${PORT}  (admin: /admin.html)`));
+if (require.main === module) {
+  app.listen(PORT, () => console.log(`Running on http://localhost:${PORT}  (admin: /admin.html)`));
+}
+
+module.exports = app;
