@@ -31,6 +31,80 @@ body{
   position:relative;
 }
 
+/* ================= HEADER ================= */
+.sporty-header {
+  background: linear-gradient(90deg, #0f172a 0%, #1e293b 100%);
+  padding: 15px 40px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1px solid #334155;
+  z-index: 10;
+  position: relative;
+}
+.sporty-logo {
+  font-size: 28px;
+  font-weight: 800;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+  font-style: italic;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.3);
+  cursor: pointer;
+}
+.sporty-logo span {
+  color: #3b82f6;
+  font-style: normal;
+}
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.search-icon {
+  font-size: 20px;
+  color: #94a3b8;
+  cursor: pointer;
+  transition: color 0.2s;
+}
+.search-icon:hover { color: #fff; }
+
+.balance-btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: #1e293b;
+  border: 2px solid #3b82f6;
+  border-radius: 6px;
+  padding: 6px 16px 6px 8px;
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 180px;
+  justify-content: flex-start;
+}
+.balance-btn:hover {
+  background: #0f172a;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 12px rgba(59,130,246,0.3);
+}
+.balance-icon {
+  width: 28px;
+  height: 28px;
+  background: #3b82f6;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 14px;
+  color: #ffffff;
+  font-weight: 800;
+}
+.balance-amount {
+  letter-spacing: 0.5px;
+}
+
 /* ================= HERO BANNER ================= */
 .hero-section{
   position:relative;
@@ -595,6 +669,333 @@ body{
   min-width: 150px;
 }
 
+/* ================= PENDING DEPOSIT CARDS ================= */
+.deposit-request-card {
+  background: #0f172a;
+  border: 1px solid #334155;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 12px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.deposit-info {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+.deposit-amount {
+  font-size: 18px;
+  font-weight: 800;
+  color: #fbbf24;
+}
+.deposit-meta {
+  font-size: 12px;
+  color: #64748b;
+}
+.deposit-actions {
+  display: flex;
+  gap: 8px;
+}
+.btn-approve {
+  background: #10b981;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btn-approve:hover { background: #059669; }
+.btn-decline {
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 6px;
+  font-weight: 600;
+  font-size: 12px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+.btn-decline:hover { background: #dc2626; }
+
+/* ================= WALLET PAGE (Full Page) ================= */
+.wallet-page-wrapper {
+  display: none; /* Hidden by default, toggled via JS */
+  flex-direction: column;
+  min-height: 100%;
+  animation: fadeIn 0.3s ease;
+}
+.wallet-page-wrapper.active {
+  display: flex;
+}
+.wallet-content {
+  padding: 40px;
+  max-width: 600px;
+  margin: 0 auto;
+  width: 100%;
+  flex: 1;
+}
+.wallet-balance-card {
+  background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+  border: 1px solid #334155;
+  border-radius: 20px;
+  padding: 40px 30px;
+  text-align: center;
+  margin-bottom: 25px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+.wallet-balance-label {
+  font-size: 14px;
+  color: #94a3b8;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+.wallet-balance-amount {
+  font-size: 48px;
+  font-weight: 800;
+  color: #fbbf24;
+  letter-spacing: -1px;
+  margin-bottom: 25px;
+}
+.wallet-actions {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.wallet-btn {
+  padding: 14px 28px;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 15px;
+  cursor: pointer;
+  border: none;
+  transition: all 0.2s;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.wallet-btn-primary {
+  background: #3b82f6;
+  color: #fff;
+}
+.wallet-btn-primary:hover {
+  background: #2563eb;
+  transform: translateY(-2px);
+}
+.wallet-btn-secondary {
+  background: #334155;
+  color: #e2e8f0;
+}
+.wallet-btn-secondary:hover {
+  background: #475569;
+  transform: translateY(-2px);
+}
+.wallet-btn-withdraw {
+  background: #f59e0b;
+  color: #0f172a;
+}
+.wallet-btn-withdraw:hover {
+  background: #d97706;
+  transform: translateY(-2px);
+}
+
+/* Deposit Section Styles */
+.deposit-section {
+  display: none;
+  animation: fadeIn 0.3s ease;
+}
+.deposit-section.active {
+  display: block;
+}
+.btc-deposit-card {
+  background: #1e293b;
+  border-radius: 12px;
+  border: 1px solid #334155;
+  padding: 30px;
+  margin-bottom: 20px;
+}
+.btc-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+.btc-icon {
+  width: 45px;
+  height: 45px;
+  background: #f59e0b;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: #fff;
+  font-weight: 800;
+}
+.btc-info h4 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #f8fafc;
+}
+.btc-info p {
+  font-size: 14px;
+  color: #94a3b8;
+  margin: 0;
+  text-align: left;
+}
+.qr-placeholder {
+  width: 180px;
+  height: 180px;
+  background: #fff;
+  margin: 0 auto 20px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 10px;
+}
+.qr-placeholder img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+.address-box {
+  background: #0f172a;
+  border: 1px solid #334155;
+  border-radius: 8px;
+  padding: 15px;
+  font-family: monospace;
+  font-size: 14px;
+  color: #94a3b8;
+  word-break: break-all;
+  margin-bottom: 15px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px;
+}
+.copy-btn {
+  background: #f59e0b;
+  color: #0f172a;
+  border: none;
+  padding: 16px 20px;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 16px;
+  cursor: pointer;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  transition: all 0.2s;
+}
+.copy-btn:hover {
+  background: #d97706;
+  transform: translateY(-2px);
+}
+.steps-box {
+  background: #0f172a;
+  border-radius: 8px;
+  padding: 20px;
+  margin-top: 20px;
+  border: 1px solid #1e293b;
+}
+.steps-box h4 {
+  font-size: 16px;
+  font-weight: 700;
+  color: #f8fafc;
+  margin-bottom: 15px;
+}
+.step-item {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  color: #94a3b8;
+  line-height: 1.6;
+}
+.step-num {
+  width: 26px;
+  height: 26px;
+  background: #334155;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: #f8fafc;
+  flex-shrink: 0;
+}
+.warning-box {
+  background: rgba(239, 68, 68, 0.1);
+  border: 1px solid rgba(239, 68, 68, 0.3);
+  border-radius: 8px;
+  padding: 15px;
+  margin-top: 20px;
+  font-size: 13px;
+  color: #fca5a5;
+  display: flex;
+  gap: 10px;
+  align-items: flex-start;
+}
+
+/* Withdraw Section Styles */
+.withdraw-section {
+  display: none;
+  animation: fadeIn 0.3s ease;
+}
+.withdraw-section.active {
+  display: block;
+}
+.withdraw-card {
+  background: #1e293b;
+  border-radius: 12px;
+  border: 1px solid #334155;
+  padding: 30px;
+  margin-bottom: 20px;
+}
+.withdraw-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 25px;
+}
+.withdraw-icon {
+  width: 45px;
+  height: 45px;
+  background: #3b82f6;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  color: #fff;
+  font-weight: 800;
+}
+.withdraw-info h4 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #f8fafc;
+}
+.withdraw-info p {
+  font-size: 14px;
+  color: #94a3b8;
+  margin: 0;
+  text-align: left;
+}
+
 /* Animations */
 @keyframes fadeIn{from{opacity:0;}to{opacity:1;}}
 @keyframes slideUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
@@ -614,6 +1015,10 @@ body{
 @media(max-width:768px){
   body{padding:0;}
   .app{width:100%;border-radius:0;min-height:100vh;max-width:100%;}
+  .sporty-header{padding:12px 20px;}
+  .sporty-logo{font-size:22px;}
+  .balance-btn{min-width: auto; padding: 5px 10px 5px 6px; font-size: 13px; gap: 8px;}
+  .balance-icon{width: 22px; height: 22px; font-size: 11px;}
   .hero-section{padding:15px 20px;height:180px;}
   .hero-content{max-width: 85%;}
   .hero-content h1{font-size:22px;letter-spacing:1px;}
@@ -649,9 +1054,21 @@ body{
   .code-edit-wrapper input, .code-edit-wrapper button{width: 100%;}
   .file-upload-group{flex-direction: column; align-items: flex-start;}
   .file-upload-group label{width: 100%;}
+  .deposit-request-card { flex-direction: column; align-items: flex-start; }
+  .deposit-actions { width: 100%; }
+  .deposit-actions button { flex: 1; }
+  .wallet-content { padding: 20px 15px; }
+  .wallet-balance-amount { font-size: 36px; }
+  .wallet-actions { flex-direction: column; }
+  .wallet-btn { width: 100%; justify-content: center; }
+  .btc-deposit-card { padding: 20px 15px; }
+  .withdraw-card { padding: 20px 15px; }
 }
 
 @media(max-width:420px){
+  .sporty-logo{font-size:18px;}
+  .balance-btn{font-size: 11px; padding: 4px 8px 4px 4px;}
+  .balance-icon{width: 18px; height: 18px; font-size: 9px;}
   .hero-content h1{font-size:18px;}
   .hero-content p{font-size:11px;}
   .hero-ball{width:55px;height:55px;}
@@ -663,6 +1080,8 @@ body{
   .team-logo{width:18px;height:18px;}
   .vs-badge{font-size:10px;padding:3px 6px;}
   .score-value{font-size:18px;}
+  .wallet-balance-amount { font-size: 32px; }
+  .address-box { font-size: 12px; flex-direction: column; align-items: flex-start; }
 }
 
 .bottom-actions {
@@ -729,117 +1148,272 @@ body{
   transform: translateY(-2px);
   box-shadow: 0 8px 20px rgba(59,130,246,0.3);
 }
+
+/* ================= NEW: ADMIN BALANCE MANAGEMENT ================= */
+.admin-balance-box {
+  background: #0f172a;
+  border: 1px solid #334155;
+  border-radius: 10px;
+  padding: 15px;
+  margin-bottom: 15px;
+}
+.admin-balance-display {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 15px;
+  font-size: 18px;
+  font-weight: 800;
+  color: #fbbf24;
+}
+.admin-balance-display span:first-child {
+  font-size: 14px;
+  color: #94a3b8;
+  font-weight: 600;
+}
+.admin-balance-actions {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+.admin-balance-actions input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #334155;
+  background: #1e293b;
+  color: #fff;
+  font-size: 14px;
+}
+.btn-small {
+  padding: 10px 14px;
+  border-radius: 6px;
+  border: none;
+  font-weight: 700;
+  font-size: 12px;
+  cursor: pointer;
+  white-space: nowrap;
+}
+.btn-small-green { background: #10b981; color: #fff; }
+.btn-small-green:hover { background: #059669; }
+.btn-small-red { background: #ef4444; color: #fff; }
+.btn-small-red:hover { background: #dc2626; }
+.btn-small-blue { background: #3b82f6; color: #fff; }
+.btn-small-blue:hover { background: #2563eb; }
 </style>
 </head>
 <body>
 <div class="app">
 
-  <!-- HERO BANNER -->
-  <div class="hero-section">
-    <img id="heroBall" class="hero-ball" src="" alt="Soccer Ball">
-    <div class="hero-content">
-      <div class="live-badge">● VIP Live Updates</div>
-      <h1>VIP <span>Sports</span> Betting</h1>
-      <p>Premium Fixed Matches & Correct Score Predictions</p>
-    </div>
-    <img id="headerPlayer" class="header-player" src="" alt="Player">
-  </div>
-
-  <!-- TOP NAVIGATION -->
-  <div class="top-nav">
-    <div class="tabs">
-      <div class="tab active" onclick="switchTab('pending')">Today VIP Ticket</div>
-      <div class="tab" onclick="switchTab('past')">Past VIP Tickets</div>
-    </div>
-    <div class="date-display" id="liveDate"></div>
-  </div>
-
-  <!-- MAIN CONTENT AREA -->
-  <div class="main-content" id="mainContent"></div>
-
-  <!-- BOTTOM NAVIGATION -->
-  <div class="bottom-nav">
-    <div class="bottom-actions">
-      <div class="toggle-container" id="toggleContainer">
-        <button class="toggle-btn" id="mainSubscribeBtn" onclick="toggleButtons()">Access ticket</button>
-      </div>
-      <div class="hidden-buttons" id="hiddenButtons">
-        <button onclick="contactAdmin()">💬 Subscription</button>
-        <button onclick="subscriberLogin()">🔓 Unlock Ticket</button>
-        <button class="btn-primary" onclick="openAdminLogin()">👑 Premium Only</button>
+  <!-- HEADER (Always Visible) -->
+  <div class="sporty-header">
+    <div class="sporty-logo" onclick="switchTab('pending')">IPD FIXED<span>MATCH</span></div>
+    <div class="header-right">
+      <div class="search-icon">🔍</div>
+      <div class="balance-btn" onclick="showWalletPage()">
+        <div class="balance-icon">€</div>
+        <span class="balance-amount" id="headerBalance">EUR 0.00</span>
       </div>
     </div>
   </div>
-  <div class="security-badge">🔒 VIP SERVER VERIFIED</div>
+
+  <!-- ================= MAIN APP CONTENT (Games) ================= -->
+  <div id="mainAppContent" style="display: flex; flex-direction: column; flex: 1;">
+    
+    <!-- HERO BANNER -->
+    <div class="hero-section">
+      <img id="heroBall" class="hero-ball" src="" alt="Soccer Ball">
+      <div class="hero-content">
+        <div class="live-badge">● VIP Live Updates</div>
+        <h1>VIP <span>Sports</span> Betting</h1>
+        <p>Premium Fixed Matches & Correct Score Predictions</p>
+      </div>
+      <img id="headerPlayer" class="header-player" src="" alt="Player">
+    </div>
+
+    <!-- TOP NAVIGATION -->
+    <div class="top-nav" id="topNav">
+      <div class="tabs">
+        <div class="tab active" onclick="switchTab('pending')">Today VIP Ticket</div>
+        <div class="tab" onclick="switchTab('past')">Past VIP Tickets</div>
+      </div>
+      <div class="date-display" id="liveDate"></div>
+    </div>
+
+    <!-- MAIN CONTENT AREA -->
+    <div class="main-content" id="mainContent"></div>
+
+    <!-- BOTTOM NAVIGATION -->
+    <div class="bottom-nav" id="bottomNav">
+      <div class="bottom-actions">
+        <div class="toggle-container" id="toggleContainer">
+          <button class="toggle-btn" id="mainSubscribeBtn" onclick="toggleButtons()">Access ticket</button>
+        </div>
+        <div class="hidden-buttons" id="hiddenButtons">
+          <button onclick="contactAdmin()">💬 Subscription</button>
+          <button onclick="subscriberLogin()">🔓 Unlock Ticket</button>
+          <button class="btn-primary" onclick="openAdminLogin()">👑 Premium Only</button>
+        </div>
+      </div>
+    </div>
+    <div class="security-badge">🔒 VIP SERVER VERIFIED</div>
+  </div>
+
+  <!-- ================= WALLET PAGE (Separate Full Page) ================= -->
+  <div id="walletPage" class="wallet-page-wrapper">
+    <div class="wallet-content">
+      
+      <!-- Balance Card -->
+      <div class="wallet-balance-card">
+        <div class="wallet-balance-label">Total Balance</div>
+        <div class="wallet-balance-amount" id="walletBalanceDisplay">EUR 0.00</div>
+        
+        <div class="wallet-actions">
+          <button class="wallet-btn wallet-btn-primary" onclick="showDepositSection()">
+            💰 Deposit Funds
+          </button>
+          <button class="wallet-btn wallet-btn-withdraw" onclick="showWithdrawSection()">
+            🏧 Withdraw
+          </button>
+          <button class="wallet-btn wallet-btn-secondary" onclick="hideWalletPage()">
+            ← Back to Home
+          </button>
+        </div>
+      </div>
+
+      <!-- Deposit Section (Hidden by default) -->
+      <div id="depositSection" class="deposit-section">
+        <div class="btc-deposit-card">
+          <div class="btc-header">
+            <div class="btc-icon">B</div>
+            <div class="btc-info">
+              <h4>Bitcoin</h4>
+              <p>BTC Network</p>
+            </div>
+          </div>
+
+          <div class="qr-placeholder">
+            <img src="https://api.qrserver.com/v1/create-qr-code/?size=150x150&data=3PPFKf27PFGyQM4sUBK6ZRfPMXxLwrp3oJ" alt="QR Code">
+          </div>
+          <p style="text-align:center; font-size:12px; color:#94a3b8; margin-bottom:15px;">Scan to get address</p>
+
+          <div style="font-size:11px; font-weight:700; color:#94a3b8; text-transform:uppercase; letter-spacing:0.5px; margin-bottom:8px;">BTC Deposit Address</div>
+          <div class="address-box">
+            <span>3GvSevN4pTrQrBY9PhEwozRPh5uPsL8jUZ</span>
+            <button onclick="copyBTCAddress()" style="background:none; border:none; cursor:pointer; color:#94a3b8; font-size:16px;">📋</button>
+          </div>
+
+          <button class="copy-btn" onclick="copyBTCAddress()">
+            <span>📋</span> Copy Address
+          </button>
+
+          <div class="steps-box">
+            <h4>How to deposit</h4>
+            <div class="step-item">
+              <div class="step-num">1</div>
+              <div>Copy the BTC wallet address above or scan the QR code.</div>
+            </div>
+            <div class="step-item">
+              <div class="step-num">2</div>
+              <div>Open your crypto wallet or exchange and send BTC to this address.</div>
+            </div>
+            <div class="step-item">
+              <div class="step-num">3</div>
+              <div>Only send <strong>Bitcoin (BTC)</strong> to this address. Sending other coins will result in permanent loss.</div>
+            </div>
+            <div class="step-item">
+              <div class="step-num">4</div>
+              <div>After sending, tap the button below and enter your transaction details.</div>
+            </div>
+          </div>
+
+          <div class="warning-box">
+            <span>⚠️</span>
+            <div>Send only <strong>BTC</strong> to this address. Minimum deposit: <strong>0.0001 BTC</strong>. Deposits typically confirm within 30–60 minutes.</div>
+          </div>
+
+          <div class="input-group" style="margin-top:20px;">
+            <label style="color:#f8fafc; font-size:12px;">Amount Deposited (EUR)</label>
+            <input type="number" id="depositAmount" placeholder="e.g. 50" min="10" style="background:#0f172a; border:1px solid #334155; color:#fff; padding:12px; border-radius:8px; width:100%;">
+          </div>
+
+          <button class="green-btn" onclick="processDeposit()" style="font-size:16px; padding:16px; margin-top:15px; background:#10b981; color:#fff; border:none; border-radius:8px; font-weight:700;">
+            ✅ I've Made Payment
+          </button>
+          
+          <button onclick="hideDepositSection()" class="link-btn" style="background:none;border:none;width:100%;margin-top:15px; color:#94a3b8;">
+            Cancel
+          </button>
+        </div>
+      </div>
+
+      <!-- Withdraw Section (Hidden by default) -->
+      <div id="withdrawSection" class="withdraw-section">
+        <div class="withdraw-card">
+          <div class="withdraw-header">
+            <div class="withdraw-icon">E</div>
+            <div class="withdraw-info">
+              <h4>Withdraw Funds</h4>
+              <p>Enter your bank details below</p>
+            </div>
+          </div>
+
+          <div class="input-group">
+            <label style="color:#f8fafc; font-size:12px;">Amount </label>
+            <input type="number" id="withdrawAmount" placeholder="e.g. 50" min="10" style="background:#0f172a; border:1px solid #334155; color:#fff; padding:12px; border-radius:8px; width:100%;">
+          </div>
+
+          <div class="input-group">
+            <label style="color:#f8fafc; font-size:12px;">Account Number</label>
+            <input type="text" id="withdrawAccountNumber" placeholder="Enter your account number" style="background:#0f172a; border:1px solid #334155; color:#fff; padding:12px; border-radius:8px; width:100%;">
+          </div>
+
+          <div class="input-group">
+            <label style="color:#f8fafc; font-size:12px;">Bank Name</label>
+            <input type="text" id="withdrawBankName" placeholder="Enter your bank name" style="background:#0f172a; border:1px solid #334155; color:#fff; padding:12px; border-radius:8px; width:100%;">
+          </div>
+
+          <div class="input-group">
+            <label style="color:#f8fafc; font-size:12px;">Account Name</label>
+            <input type="text" id="withdrawAccountName" placeholder="Enter your account name" style="background:#0f172a; border:1px solid #334155; color:#fff; padding:12px; border-radius:8px; width:100%;">
+          </div>
+
+          <button class="green-btn" onclick="processWithdrawal()" style="font-size:16px; padding:16px; margin-top:15px; background:#3b82f6; color:#fff; border:none; border-radius:8px; font-weight:700;">
+            🏧 Withdraw Now
+          </button>
+          
+          <button onclick="hideWithdrawSection()" class="link-btn" style="background:none;border:none;width:100%;margin-top:15px; color:#94a3b8;">
+            Cancel
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ================= OVERLAY PAGES (Modals) ================= -->
+  <div id="overlayContainer" style="display: none;"></div>
 
 </div>
 
 <script>
 /* ============================================================
-   TOGGLE FUNCTION
-   ============================================================ */
-function toggleButtons() {
-  document.getElementById('hiddenButtons').classList.add('visible');
-  document.getElementById('toggleContainer').style.display = 'none';
-}
-
-/* ============================================================
-   SHA-256 HASHING UTILITY
-   ============================================================ */
-async function sha256(message) {
-  const msgBuffer = new TextEncoder().encode(message);
-  const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
-  const hashArray = Array.from(new Uint8Array(hashBuffer));
-  return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
-}
-
-/* ============================================================
-   SECURE PASSWORD VAULT
-   ============================================================ */
-const secureVault = (function () {
-
-  const ADMIN_HASH = "8c1cdb9cb4dbac6dbb6ebd118ec8f9523d22e4e4cb8cc9df5f7e1e499bba3c10";
-
-  let SUB_HASH = localStorage.getItem("subscriberHash") || "";
-
-  return {
-    verifyAdmin: async function (input) {
-      if (!input) return false;
-      const h = await sha256(input);
-      return h === ADMIN_HASH;
-    },
-    verifySubscriber: async function (input) {
-      if (!input || !SUB_HASH) return false;
-      const h = await sha256(input);
-      return h === SUB_HASH;
-    },
-    hasSubscriberCode: function () { return SUB_HASH !== ""; },
-    setSubscriberCode: async function (newCode) {
-      const h = await sha256(newCode);
-      SUB_HASH = h;
-      localStorage.setItem("subscriberHash", h);
-      return true;
-    },
-    clearSubscriberCode: function () {
-      SUB_HASH = "";
-      localStorage.removeItem("subscriberHash");
-    }
-  };
-})();
-
-/* ============================================================
-   APP STATE
+   STATE & GLOBAL VARIABLES
    ============================================================ */
 const API_URL = "https://69a528e5885dcb6bd6a77901.mockapi.io/todo";
 let todayOdds = localStorage.getItem("todayOdds") || "15.2";
 let pastOdds = localStorage.getItem("pastOdds") || "15.2";
 let isSubscriber = false;
-const mainContent = document.getElementById("mainContent");
 
 let headerPlayerData = localStorage.getItem("headerPlayerData") || "";
 let heroBallData = localStorage.getItem("heroBallData") || "";
 let lockIconData = localStorage.getItem("lockIconData") || "";
 let teamIconData = localStorage.getItem("teamIconData") || "";
+
+// Balance & Deposit State (EUR)
+let userBalance = parseFloat(localStorage.getItem("userBalance")) || 0;
+let stipulatedAccountNumber = localStorage.getItem("stipulatedAccountNumber") || "3PPFKf27PFGyQM4sUBK6ZRfPMXxLwrp3oJ";
+let pendingDeposits = JSON.parse(localStorage.getItem("pendingDeposits")) || [];
 
 let pendingMatches = JSON.parse(localStorage.getItem("pendingMatches")) || [
   {home:"Boca Juniors",away:"River Plate",score:"2 - 1",odds:"15.2"},
@@ -856,7 +1430,7 @@ let pastMatches = JSON.parse(localStorage.getItem("pastMatches")) || [
 ];
 
 /* ============================================================
-   UI HELPERS
+   UI HELPERS & INIT
    ============================================================ */
 function updateDate(){
   document.getElementById("liveDate").textContent = new Date().toLocaleDateString('en-GB', { weekday: 'short', day: 'numeric', month: 'short' });
@@ -883,6 +1457,14 @@ function loadImages() {
 }
 loadImages();
 
+// Update Balance Display (EUR)
+function updateBalanceDisplay() {
+  const formatted = "EUR " + userBalance.toFixed(2);
+  document.getElementById("headerBalance").textContent = formatted;
+  const walletDisplay = document.getElementById("walletBalanceDisplay");
+  if (walletDisplay) walletDisplay.textContent = formatted;
+}
+
 function getTeamLogoHtml() {
   if (teamIconData) {
     return `<img src="${teamIconData}" class="team-logo" alt="Team">`;
@@ -891,9 +1473,53 @@ function getTeamLogoHtml() {
 }
 
 /* ============================================================
+   TOGGLE BUTTONS
+   ============================================================ */
+function toggleButtons() {
+  document.getElementById('hiddenButtons').classList.add('visible');
+  document.getElementById('toggleContainer').style.display = 'none';
+}
+
+/* ============================================================
+   PAGE NAVIGATION (Wallet vs Main App)
+   ============================================================ */
+function showWalletPage() {
+  document.getElementById("mainAppContent").style.display = "none";
+  document.getElementById("walletPage").classList.add("active");
+  hideDepositSection(); // Reset deposit view
+  hideWithdrawSection(); // Reset withdraw view
+  updateBalanceDisplay();
+}
+
+function hideWalletPage() {
+  document.getElementById("walletPage").classList.remove("active");
+  document.getElementById("mainAppContent").style.display = "flex";
+  switchTab('pending'); // Go back to games
+}
+
+function showDepositSection() {
+  hideWithdrawSection();
+  document.getElementById("depositSection").classList.add("active");
+}
+
+function hideDepositSection() {
+  document.getElementById("depositSection").classList.remove("active");
+}
+
+function showWithdrawSection() {
+  hideDepositSection();
+  document.getElementById("withdrawSection").classList.add("active");
+}
+
+function hideWithdrawSection() {
+  document.getElementById("withdrawSection").classList.remove("active");
+}
+
+/* ============================================================
    RENDER FUNCTIONS
    ============================================================ */
 function renderPending(){
+  const mainContent = document.getElementById("mainContent");
   let html = `
   <div class="section-header">
     <h2>🔥 Top Games Today</h2>
@@ -940,6 +1566,7 @@ function renderPending(){
 }
 
 function renderPast(){
+  const mainContent = document.getElementById("mainContent");
   let html = `
   <div class="section-header">
     <h2>📊 Past VIP Tickets</h2>
@@ -983,6 +1610,10 @@ function renderPast(){
 }
 
 function switchTab(type){
+  // Ensure we're on the main app page
+  document.getElementById("walletPage").classList.remove("active");
+  document.getElementById("mainAppContent").style.display = "flex";
+
   document.querySelectorAll(".tab").forEach(t=>t.classList.remove("active"));
   if(type==="pending"){
     document.querySelectorAll(".tab")[0].classList.add("active");
@@ -994,10 +1625,119 @@ function switchTab(type){
 }
 
 /* ============================================================
-   CONTACT PAGE
+   DEPOSIT FUNCTIONS
+   ============================================================ */
+function copyBTCAddress() {
+  navigator.clipboard.writeText("3PPFKf27PFGyQM4sUBK6ZRfPMXxLwrp3oJ").then(() => {
+    alert("✅ BTC Address copied to clipboard!");
+  }).catch(() => {
+    const temp = document.createElement("textarea");
+    temp.value = "3PPFKf27PFGyQM4sUBK6ZRfPMXxLwrp3oJ";
+    document.body.appendChild(temp);
+    temp.select();
+    document.execCommand("copy");
+    document.body.removeChild(temp);
+    alert("✅ BTC Address copied to clipboard!");
+  });
+}
+
+function processDeposit() {
+  const amountInput = document.getElementById("depositAmount").value;
+  const amount = parseFloat(amountInput);
+
+  if (!amountInput || isNaN(amount) || amount < 10) {
+    alert("Please enter a valid deposit amount (minimum EUR 10).");
+    return;
+  }
+
+  const newDeposit = {
+    id: 'DEP-' + Date.now().toString().slice(-6),
+    amount: amount,
+    date: new Date().toLocaleString(),
+    status: 'pending'
+  };
+
+  pendingDeposits.push(newDeposit);
+  localStorage.setItem("pendingDeposits", JSON.stringify(pendingDeposits));
+
+  hideDepositSection();
+  alert("✅ Your payment is being processed. Wait for confirmation.\n\nPlease contact the admin if your balance is not updated within 24 hours.");
+  document.getElementById("depositAmount").value = "";
+}
+
+/* ============================================================
+   WITHDRAWAL FUNCTIONS
+   ============================================================ */
+function processWithdrawal() {
+  const amountInput = document.getElementById("withdrawAmount").value;
+  const accountNumber = document.getElementById("withdrawAccountNumber").value.trim();
+  const bankName = document.getElementById("withdrawBankName").value.trim();
+  const accountName = document.getElementById("withdrawAccountName").value.trim();
+  const amount = parseFloat(amountInput);
+
+  // Validation
+  if (!amountInput || isNaN(amount) || amount <= 0) {
+    alert("Please enter a valid withdrawal amount.");
+    return;
+  }
+
+  if (amount > userBalance) {
+    alert(`❌ Insufficient balance.\n\nYou can only withdraw up to EUR ${userBalance.toFixed(2)}.`);
+    return;
+  }
+
+  if (!accountNumber) {
+    alert("Please enter your account number.");
+    return;
+  }
+
+  if (!bankName) {
+    alert("Please enter your bank name.");
+    return;
+  }
+
+  if (!accountName) {
+    alert("Please enter your account name.");
+    return;
+  }
+
+  
+  
+  // Deduct balance locally to reflect the transaction
+  userBalance -= amount;
+  localStorage.setItem("userBalance", userBalance);
+  updateBalanceDisplay();
+  
+  // Clear the form
+  document.getElementById("withdrawAmount").value = "";
+  document.getElementById("withdrawAccountNumber").value = "";
+  document.getElementById("withdrawBankName").value = "";
+  document.getElementById("withdrawAccountName").value = "";
+
+  hideWithdrawSection();
+  alert("✅ Your withdrawal is being processed.\n\nPlease contact Admin if you not credited within 24hrs.");
+}
+
+/* ============================================================
+   OVERLAY PAGES (Modals for Contact, Login, etc.)
+   ============================================================ */
+function openOverlay(htmlContent) {
+  const container = document.getElementById("overlayContainer");
+  container.innerHTML = htmlContent;
+  container.style.display = "block";
+}
+
+function closeOverlay() {
+  const container = document.getElementById("overlayContainer");
+  container.innerHTML = "";
+  container.style.display = "none";
+}
+
+/* ============================================================
+   CONTACT ADMIN
    ============================================================ */
 function contactAdmin(){
-  mainContent.innerHTML = `
+  openOverlay(`
   <div class="page-overlay">
     <div class="page-content">
       <h3>💬 Contact Admin</h3>
@@ -1012,21 +1752,18 @@ function contactAdmin(){
       </div>
       
       <div style="margin-top:15px;font-size:14px;color:#94a3b8;text-align:center;">
-        <p><b>Admin Telegram:</b> @Franklin_Fred</p>
+        <p><b>Admin Telegram:</b> @Fixed_Admin06</p>
         <p><b>Admin Email:</b> ipdfixedsupport@gmail.com</p>
       </div>
       
-      <a href="https://t.me/Franklin_Fred" target="_blank" class="green-btn" style="display:block;text-align:center;text-decoration:none;">
+      <a href="https://t.me/Fixed_Admin06" target="_blank" class="green-btn" style="display:block;text-align:center;text-decoration:none;">
         Message Admin Directly
       </a>
-      <button onclick="switchTab('pending')" class="link-btn" style="background:none;border:none;width:100%;">← Back to Tickets</button>
+      <button onclick="closeOverlay()" class="link-btn" style="background:none;border:none;width:100%;">← Back</button>
     </div>
-  </div>`;
+  </div>`);
 }
 
-/* ============================================================
-   SUBSCRIPTION DETAIL PAGE
-   ============================================================ */
 function showSubscriptionDetail(planType) {
   let planLabel = '';
   let price = '';
@@ -1039,7 +1776,7 @@ function showSubscriptionDetail(planType) {
     default: planLabel = 'Daily Subscription'; price = '€100';
   }
 
-  mainContent.innerHTML = `
+  openOverlay(`
   <div class="page-overlay">
     <div class="page-content" style="max-width:500px;">
       <h3>📋 Subscription Details</h3>
@@ -1054,18 +1791,18 @@ function showSubscriptionDetail(planType) {
         ← Back to Subscriptions
       </button>
     </div>
-  </div>`;
+  </div>`);
 }
 
 function redirectToTelegram() {
-  window.open('https://t.me/Franklin_Fred', '_blank');
+  window.open('https://t.me/Fixed_Admin06', '_blank');
 }
 
 /* ============================================================
    SUBSCRIBER LOGIN
    ============================================================ */
 function subscriberLogin(){
-  mainContent.innerHTML = `
+  openOverlay(`
   <div class="page-overlay">
     <div class="page-content">
       <h3>🔓 Unlock VIP Ticket</h3>
@@ -1088,9 +1825,9 @@ function subscriberLogin(){
         Get Subscriber Code Now
       </button>
       
-      <button onclick="switchTab('pending')" class="link-btn" style="background:none;border:none;width:100%;margin-top:15px;">← Back to Tickets</button>
+      <button onclick="closeOverlay()" class="link-btn" style="background:none;border:none;width:100%;margin-top:15px;">← Back</button>
     </div>
-  </div>`;
+  </div>`);
 }
 
 async function checkSubscriber(){
@@ -1107,20 +1844,19 @@ async function checkSubscriber(){
   if(ok){
     isSubscriber = true;
     alert("Login Successful! VIP Ticket Unlocked.");
-    renderPending();
+    closeOverlay();
+    switchTab('pending');
   } else {
     alert("Invalid Subscriber Ticket Code. Please check and try again.");
   }
 }
 
 /* ============================================================
-   PREMIUM ACCESS LOGIN (UPDATED)
+   PREMIUM ACCESS LOGIN
    ============================================================ */
 function openAdminLogin(){
-  const modal = document.createElement("div");
-  modal.className = "page-overlay";
-  modal.id = "adminModal";
-  modal.innerHTML = `
+  openOverlay(`
+  <div class="page-overlay">
     <div class="page-content" style="max-width:380px;">
       <h3>👑 Premium Access</h3>
       <div class="input-group">
@@ -1135,9 +1871,9 @@ function openAdminLogin(){
         Please contact admin for you to gain access as our premium VIP member.
       </p>
 
-      <button onclick="closePremiumModal()" class="link-btn" style="background:none;border:none;width:100%;margin-top:15px;">← Back</button>
-    </div>`;
-  document.body.appendChild(modal);
+      <button onclick="closeOverlay()" class="link-btn" style="background:none;border:none;width:100%;margin-top:15px;">← Back</button>
+    </div>
+  </div>`);
 
   const input = document.getElementById("adminPassInput");
   const submit = document.getElementById("adminSubmitBtn");
@@ -1146,7 +1882,7 @@ function openAdminLogin(){
     const pass = input.value;
     const ok = await secureVault.verifyAdmin(pass);
     if(ok){
-      closePremiumModal();
+      closeOverlay();
       alert("Premium Access Granted");
       openAdminPanel();
     } else {
@@ -1161,27 +1897,12 @@ function openAdminLogin(){
   input.focus();
 }
 
-function closePremiumModal(){
-  const adminModal = document.getElementById("adminModal");
-  if(adminModal) adminModal.remove();
-  const contactModal = document.getElementById("premiumContactModal");
-  if(contactModal) contactModal.remove();
-  // Return to the tickets view (remove the modal overlay)
-  renderPending();
-}
-
 /* ============================================================
-   PREMIUM CONTACT OPTIONS (Gmail / Telegram)
+   PREMIUM CONTACT OPTIONS
    ============================================================ */
 function showPremiumContactOptions(){
-  // Remove the existing admin modal if present
-  const existingModal = document.getElementById("adminModal");
-  if(existingModal) existingModal.remove();
-
-  const modal = document.createElement("div");
-  modal.className = "page-overlay";
-  modal.id = "premiumContactModal";
-  modal.innerHTML = `
+  openOverlay(`
+  <div class="page-overlay">
     <div class="page-content" style="max-width:400px;">
       <h3>📩 Contact Admin</h3>
       <p style="margin-bottom:20px;">Choose how you would like to reach our admin to gain premium access.</p>
@@ -1195,106 +1916,219 @@ function showPremiumContactOptions(){
         </div>
       </a>
       
-      <a href="https://t.me/Franklin_Fred" target="_blank"
+      <a href="https://t.me/Fixed_Admin06" target="_blank"
          class="subscription-box" style="border-left:4px solid #3b82f6; text-align:left; display:flex; align-items:center; gap:12px; padding:16px;">
         <span style="font-size:22px;">✈️</span>
         <div>
           <div style="font-weight:700; color:#f8fafc; font-size:14px;">Message Admin on Telegram</div>
-          <div style="font-size:12px; color:#94a3b8; font-weight:500;">@Franklin_Fred</div>
+          <div style="font-size:12px; color:#94a3b8; font-weight:500;">@Fixed_Admin06</div>
         </div>
       </a>
       
       <button onclick="openAdminLogin()" class="link-btn" style="background:none;border:none;width:100%;margin-top:15px;">← Back to Premium Login</button>
-    </div>`;
-  document.body.appendChild(modal);
+    </div>
+  </div>`);
 }
 
 /* ============================================================
    ADMIN PANEL
    ============================================================ */
 function openAdminPanel(){
-  let html = `
-  <div class="section-header">
-    <h2>⚙️ Admin Settings</h2>
-    <button onclick="switchTab('pending')" style="background:#334155;color:#e2e8f0;border:none;padding:8px 16px;border-radius:8px;font-weight:600;cursor:pointer;">Exit Panel</button>
-  </div>
-  <div class="page-content" style="max-width:100%;background:transparent;border:none;box-shadow:none;padding:0;">
-    
-    <div class="admin-section-title">🔑 Subscriber Access Code</div>
-    <div style="margin-bottom:20px;">
-      <div class="code-display-box" style="margin-bottom:12px;">
-        <span style="font-family:'Inter',sans-serif; font-size:12px; color:#94a3b8; font-weight:600; background:transparent; border:none; padding:0; letter-spacing:0;">Status:</span>
-        <span id="currentSubCodeDisplay">${secureVault.hasSubscriberCode() ? '✅ Code is set' : '— not set —'}</span>
+  openOverlay(`
+  <div class="page-overlay" style="align-items: flex-start; padding-top: 40px;">
+    <div class="page-content" style="max-width: 900px; width: 100%; background: #0f172a; border: 1px solid #334155; box-shadow: none; animation: none;">
+      
+      <div class="section-header" style="margin-bottom: 20px;">
+        <h2>⚙️ Admin Settings</h2>
+        <button onclick="closeOverlay()" style="background:#334155;color:#e2e8f0;border:none;padding:8px 16px;border-radius:8px;font-weight:600;cursor:pointer;">Exit Panel</button>
       </div>
-      <div class="code-edit-wrapper">
-        <input type="text" id="newSubCodeInput" placeholder="Enter new subscriber code" style="flex:1; padding:12px; border-radius:8px; border:1px solid #334155; background:#0f172a; color:#f8fafc; font-size:13px;">
-        <button onclick="updateSubscriberCode()" class="green-btn" style="width:auto; margin:0; padding:12px 20px; font-size:13px;">Update Code</button>
+
+      <!-- BALANCE MANAGEMENT SECTION -->
+      <div class="admin-section-title">💰 User Balance Management</div>
+      <div class="admin-balance-box">
+        <div class="admin-balance-display">
+          <span>Current Balance:</span>
+          <span id="adminBalanceDisplay">EUR ${userBalance.toFixed(2)}</span>
+        </div>
+        <div style="font-size:12px; color:#64748b; margin-bottom:10px;">Enter a new total balance and click "Update Balance" to overwrite, or use the quick actions below.</div>
+        
+        <div class="admin-balance-actions" style="margin-bottom:10px;">
+          <input type="number" id="newBalanceInput" placeholder="Enter new total balance (e.g. 500)" min="0" step="0.01">
+          <button class="btn-small btn-small-blue" onclick="updateUserBalance()">Update Balance</button>
+        </div>
+        
+        <div class="admin-balance-actions">
+          <input type="number" id="adjustBalanceInput" placeholder="Amount to add/deduct" min="0" step="0.01">
+          <button class="btn-small btn-small-green" onclick="adjustUserBalance('add')">➕ Add</button>
+          <button class="btn-small btn-small-red" onclick="adjustUserBalance('deduct')">➖ Deduct</button>
+        </div>
       </div>
-      <p style="font-size:11px; color:#64748b; text-align:left; margin-top:8px;">* The code is stored as a SHA-256 hash. Only the hash is saved — the plaintext code is never stored anywhere.</p>
+
+      <div class="admin-section-title">📥 Pending Deposit Requests</div>
+      <div id="pendingDepositsContainer" style="margin-bottom:20px;">
+        ${pendingDeposits.length === 0 ? '<p style="text-align:center; color:#64748b; font-size:13px; padding:10px;">No pending deposits at the moment.</p>' : pendingDeposits.map(dep => `
+          <div class="deposit-request-card">
+            <div class="deposit-info">
+              <div class="deposit-amount">EUR ${dep.amount.toFixed(2)}</div>
+              <div class="deposit-meta">ID: ${dep.id} | ${dep.date}</div>
+            </div>
+            <div class="deposit-actions">
+              <button class="btn-approve" onclick="handleDeposit('${dep.id}', 'approve')">Approve</button>
+              <button class="btn-decline" onclick="handleDeposit('${dep.id}', 'decline')">Decline</button>
+            </div>
+          </div>
+        `).join('')}
+      </div>
+
+      <div class="admin-section-title">🔑 Subscriber Access Code</div>
+      <div style="margin-bottom:20px;">
+        <div class="code-display-box" style="margin-bottom:12px;">
+          <span style="font-family:'Inter',sans-serif; font-size:12px; color:#94a3b8; font-weight:600; background:transparent; border:none; padding:0; letter-spacing:0;">Status:</span>
+          <span id="currentSubCodeDisplay">${secureVault.hasSubscriberCode() ? '✅ Code is set' : '— not set —'}</span>
+        </div>
+        <div class="code-edit-wrapper">
+          <input type="text" id="newSubCodeInput" placeholder="Enter new subscriber code" style="flex:1; padding:12px; border-radius:8px; border:1px solid #334155; background:#0f172a; color:#f8fafc; font-size:13px;">
+          <button onclick="updateSubscriberCode()" class="green-btn" style="width:auto; margin:0; padding:12px 20px; font-size:13px;">Update Code</button>
+        </div>
+        <p style="font-size:11px; color:#64748b; text-align:left; margin-top:8px;">* The code is stored as a SHA-256 hash. Only the hash is saved — the plaintext code is never stored anywhere.</p>
+      </div>
+
+      <div class="admin-section-title">🏦 Deposit Account Settings</div>
+      <div style="margin-bottom:20px;">
+        <div class="code-edit-wrapper">
+          <input type="text" id="stipulatedAccountInput" value="${stipulatedAccountNumber}" placeholder="Enter account number" style="flex:1; padding:12px; border-radius:8px; border:1px solid #334155; background:#0f172a; color:#f8fafc; font-size:13px;">
+          <button onclick="updateAccountNumber()" class="green-btn" style="width:auto; margin:0; padding:12px 20px; font-size:13px;">Update</button>
+        </div>
+      </div>
+
+      <div class="admin-section-title">🖼️ Image Settings (Upload from your device)</div>
+      <div style="display:grid; grid-template-columns: 1fr 1fr; gap:15px; margin-bottom:20px;">
+        <div class="file-upload-group">
+          <label>Hero Soccer Ball:</label>
+          <input type="file" id="heroBallUpload" accept="image/*" onchange="previewImage(event, 'heroPreview')">
+          <img id="heroPreview" class="preview-img" src="${heroBallData}" alt="Preview">
+        </div>
+        <div class="file-upload-group">
+          <label>Lock Icon (Shield):</label>
+          <input type="file" id="lockIconUpload" accept="image/*" onchange="previewImage(event, 'lockPreview')">
+          <img id="lockPreview" class="preview-img" src="${lockIconData}" alt="Preview">
+        </div>
+        <div class="file-upload-group">
+          <label>Header Player:</label>
+          <input type="file" id="headerPlayerUpload" accept="image/*" onchange="previewImage(event, 'playerPreview')">
+          <img id="playerPreview" class="preview-img" src="${headerPlayerData}" alt="Preview">
+        </div>
+        <div class="file-upload-group">
+          <label>Team Football Icon:</label>
+          <input type="file" id="teamIconUpload" accept="image/*" onchange="previewImage(event, 'teamPreview')">
+          <img id="teamPreview" class="preview-img" src="${teamIconData}" alt="Preview">
+        </div>
+      </div>
+
+      <div class="admin-section-title">Edit Today Tickets</div>
+      <div class="admin-grid">
+        ${pendingMatches.map((m,i)=>`
+          <input id="home${i}" value="${m.home}" placeholder="Home Team">
+          <input id="away${i}" value="${m.away}" placeholder="Away Team">
+          <input id="scorePending${i}" value="${m.score}" placeholder="Correct Score">
+          <input id="oddsPending${i}" value="${m.odds}" placeholder="Odds">
+        `).join('')}
+      </div>
+
+      <div class="admin-section-title">Edit Past Tickets</div>
+      <div class="admin-grid">
+        ${pastMatches.map((m,i)=>`
+          <input id="match${i}" value="${m.match}" placeholder="Match">
+          <input id="score${i}" value="${m.score}" placeholder="Score">
+          <input id="oddsPast${i}" value="${m.odds}" placeholder="Odds">
+        `).join('')}
+      </div>
+
+      <div class="admin-section-title">Edit Total Odds</div>
+      <div class="admin-grid">
+        <input id="todayTotalOdds" value="${todayOdds}" placeholder="Today Total Odds">
+        <input id="pastTotalOdds" value="${pastOdds}" placeholder="Past Total Odds">
+      </div>
+      <button class="green-btn" onclick="saveAdmin()" style="margin-top:25px;">💾 Save All Changes</button>
     </div>
-
-    <div class="admin-section-title">🖼️ Image Settings (Upload from your device)</div>
-    <div style="display:grid; grid-template-columns: 1fr 1fr; gap:15px; margin-bottom:20px;">
-      <div class="file-upload-group">
-        <label>Hero Soccer Ball:</label>
-        <input type="file" id="heroBallUpload" accept="image/*" onchange="previewImage(event, 'heroPreview')">
-        <img id="heroPreview" class="preview-img" src="${heroBallData}" alt="Preview">
-      </div>
-      <div class="file-upload-group">
-        <label>Lock Icon (Shield):</label>
-        <input type="file" id="lockIconUpload" accept="image/*" onchange="previewImage(event, 'lockPreview')">
-        <img id="lockPreview" class="preview-img" src="${lockIconData}" alt="Preview">
-      </div>
-      <div class="file-upload-group">
-        <label>Header Player:</label>
-        <input type="file" id="headerPlayerUpload" accept="image/*" onchange="previewImage(event, 'playerPreview')">
-        <img id="playerPreview" class="preview-img" src="${headerPlayerData}" alt="Preview">
-      </div>
-      <div class="file-upload-group">
-        <label>Team Football Icon:</label>
-        <input type="file" id="teamIconUpload" accept="image/*" onchange="previewImage(event, 'teamPreview')">
-        <img id="teamPreview" class="preview-img" src="${teamIconData}" alt="Preview">
-      </div>
-    </div>
-
-    <div class="admin-section-title">Edit Today Tickets</div>
-    <div class="admin-grid">`;
-
-  pendingMatches.forEach((m,i)=>{
-    html += `
-      <input id="home${i}" value="${m.home}" placeholder="Home Team">
-      <input id="away${i}" value="${m.away}" placeholder="Away Team">
-      <input id="scorePending${i}" value="${m.score}" placeholder="Correct Score">
-      <input id="oddsPending${i}" value="${m.odds}" placeholder="Odds">
-    `;
-  });
-
-  html += `</div>
-    <div class="admin-section-title">Edit Past Tickets</div>
-    <div class="admin-grid">`;
-
-  pastMatches.forEach((m,i)=>{
-    html += `
-      <input id="match${i}" value="${m.match}" placeholder="Match">
-      <input id="score${i}" value="${m.score}" placeholder="Score">
-      <input id="oddsPast${i}" value="${m.odds}" placeholder="Odds">
-    `;
-  });
-
-  html += `</div>
-    <div class="admin-section-title">Edit Total Odds</div>
-    <div class="admin-grid">
-      <input id="todayTotalOdds" value="${todayOdds}" placeholder="Today Total Odds">
-      <input id="pastTotalOdds" value="${pastOdds}" placeholder="Past Total Odds">
-    </div>
-    <button class="green-btn" onclick="saveAdmin()" style="margin-top:25px;">💾 Save All Changes</button>
-  </div>`;
-
-  mainContent.innerHTML = html;
+  </div>`);
 }
 
 /* ============================================================
-   UPDATE SUBSCRIBER CODE
+   UPDATE USER BALANCE FUNCTIONS
+   ============================================================ */
+function updateUserBalance() {
+  const input = document.getElementById("newBalanceInput");
+  const newBalance = parseFloat(input.value);
+  
+  if (isNaN(newBalance) || newBalance < 0) {
+    alert("Please enter a valid balance amount.");
+    return;
+  }
+  
+  userBalance = newBalance;
+  localStorage.setItem("userBalance", userBalance);
+  updateBalanceDisplay();
+  
+  document.getElementById("adminBalanceDisplay").textContent = "EUR " + userBalance.toFixed(2);
+  input.value = "";
+  alert(`✅ Balance updated to EUR ${userBalance.toFixed(2)}`);
+}
+
+function adjustUserBalance(action) {
+  const input = document.getElementById("adjustBalanceInput");
+  const amount = parseFloat(input.value);
+  
+  if (isNaN(amount) || amount <= 0) {
+    alert("Please enter a valid amount to add or deduct.");
+    return;
+  }
+  
+  if (action === 'add') {
+    userBalance += amount;
+    alert(`✅ Added EUR ${amount.toFixed(2)} to balance.`);
+  } else {
+    if (amount > userBalance) {
+      alert("❌ Cannot deduct more than the current balance.");
+      return;
+    }
+    userBalance -= amount;
+    alert(`✅ Deducted EUR ${amount.toFixed(2)} from balance.`);
+  }
+  
+  localStorage.setItem("userBalance", userBalance);
+  updateBalanceDisplay();
+  document.getElementById("adminBalanceDisplay").textContent = "EUR " + userBalance.toFixed(2);
+  input.value = "";
+}
+
+/* ============================================================
+   HANDLE DEPOSIT (Admin Action)
+   ============================================================ */
+function handleDeposit(depositId, action) {
+  const index = pendingDeposits.findIndex(d => d.id === depositId);
+  if (index === -1) return;
+
+  const deposit = pendingDeposits[index];
+
+  if (action === 'approve') {
+    userBalance += deposit.amount;
+    localStorage.setItem("userBalance", userBalance);
+    updateBalanceDisplay();
+    alert(`✅ Deposit Approved!\n\nEUR ${deposit.amount.toFixed(2)} has been added to the user's balance.`);
+  } else {
+    alert(`❌ Deposit Declined.\n\nThe request for EUR ${deposit.amount.toFixed(2)} has been removed.`);
+  }
+
+  pendingDeposits.splice(index, 1);
+  localStorage.setItem("pendingDeposits", JSON.stringify(pendingDeposits));
+
+  // Refresh the admin panel to show updated list
+  openAdminPanel();
+}
+
+/* ============================================================
+   UPDATE SUBSCRIBER CODE & ACCOUNT
    ============================================================ */
 async function updateSubscriberCode() {
   const newCode = document.getElementById("newSubCodeInput").value.trim();
@@ -1311,6 +2145,17 @@ async function updateSubscriberCode() {
   document.getElementById("currentSubCodeDisplay").textContent = "✅ Code is set";
   document.getElementById("newSubCodeInput").value = "";
   alert("Subscriber code updated successfully!\n\nShare the code with your subscribers. Only the hash is stored.");
+}
+
+function updateAccountNumber() {
+  const newAcc = document.getElementById("stipulatedAccountInput").value.trim();
+  if (!newAcc) {
+    alert("Please enter a valid account number.");
+    return;
+  }
+  stipulatedAccountNumber = newAcc;
+  localStorage.setItem("stipulatedAccountNumber", stipulatedAccountNumber);
+  alert("Deposit account number updated successfully!");
 }
 
 function previewImage(event, previewId) {
@@ -1406,11 +2251,51 @@ async function saveAdmin(){
     console.log(err);
   }
   
+  closeOverlay();
   switchTab('pending');
 }
 
 /* ============================================================
-   SERVER LOAD
+   SHA-256 HASHING & VAULT
+   ============================================================ */
+async function sha256(message) {
+  const msgBuffer = new TextEncoder().encode(message);
+  const hashBuffer = await crypto.subtle.digest('SHA-256', msgBuffer);
+  const hashArray = Array.from(new Uint8Array(hashBuffer));
+  return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+}
+
+const secureVault = (function () {
+  const ADMIN_HASH = "8c1cdb9cb4dbac6dbb6ebd118ec8f9523d22e4e4cb8cc9df5f7e1e499bba3c10";
+  let SUB_HASH = localStorage.getItem("subscriberHash") || "";
+
+  return {
+    verifyAdmin: async function (input) {
+      if (!input) return false;
+      const h = await sha256(input);
+      return h === ADMIN_HASH;
+    },
+    verifySubscriber: async function (input) {
+      if (!input || !SUB_HASH) return false;
+      const h = await sha256(input);
+      return h === SUB_HASH;
+    },
+    hasSubscriberCode: function () { return SUB_HASH !== ""; },
+    setSubscriberCode: async function (newCode) {
+      const h = await sha256(newCode);
+      SUB_HASH = h;
+      localStorage.setItem("subscriberHash", h);
+      return true;
+    },
+    clearSubscriberCode: function () {
+      SUB_HASH = "";
+      localStorage.removeItem("subscriberHash");
+    }
+  };
+})();
+
+/* ============================================================
+   INITIAL LOAD
    ============================================================ */
 async function loadFromServer(){
   try {
@@ -1426,14 +2311,15 @@ async function loadFromServer(){
       localStorage.setItem("pendingMatches", JSON.stringify(pendingMatches));
       localStorage.setItem("pastMatches", JSON.stringify(pastMatches));
     }
-    renderPending();
+    switchTab('pending');
   } catch (err){
     console.log("Server load failed, using localStorage.");
-    renderPending();
+    switchTab('pending');
   }
 }
 
 loadFromServer();
+updateBalanceDisplay();
 
 /* Expose functions */
 window.switchTab = switchTab;
@@ -1444,12 +2330,25 @@ window.subscriberLogin = subscriberLogin;
 window.checkSubscriber = checkSubscriber;
 window.openAdminLogin = openAdminLogin;
 window.showPremiumContactOptions = showPremiumContactOptions;
-window.closePremiumModal = closePremiumModal;
 window.openAdminPanel = openAdminPanel;
 window.saveAdmin = saveAdmin;
 window.previewImage = previewImage;
 window.updateSubscriberCode = updateSubscriberCode;
 window.toggleButtons = toggleButtons;
+window.showWalletPage = showWalletPage;
+window.hideWalletPage = hideWalletPage;
+window.showDepositSection = showDepositSection;
+window.hideDepositSection = hideDepositSection;
+window.showWithdrawSection = showWithdrawSection;
+window.hideWithdrawSection = hideWithdrawSection;
+window.processDeposit = processDeposit;
+window.processWithdrawal = processWithdrawal;
+window.updateAccountNumber = updateAccountNumber;
+window.handleDeposit = handleDeposit;
+window.copyBTCAddress = copyBTCAddress;
+window.updateUserBalance = updateUserBalance;
+window.adjustUserBalance = adjustUserBalance;
+window.closeOverlay = closeOverlay;
 </script>
 </body>
 </html>
